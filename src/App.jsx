@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import {Routes, Route} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './App.css';
 import PokemonCard from './Components/PokemonCard';
 import PokemonDetail from './Components/PokemonDetail';
@@ -33,7 +34,9 @@ function App() {
   return (
     <div className="app">
       <h1>My Pokédex</h1>
-
+      <nav>
+         <Link to="/">Home</Link> | <Link to="/about">About</Link>
+      </nav>
       <Routes>
         <Route path="/" element={
           <>

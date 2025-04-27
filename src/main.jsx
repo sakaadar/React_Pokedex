@@ -1,14 +1,20 @@
-import { BrowserRouter, Routes, Route }  from 'react-router-dom'
+import { HashRouter, Routes, Route }  from 'react-router-dom'
 import App from './App.jsx';
 import PokemonDetail from './Components/PokemonDetail.jsx';
-import './index.css'
-
+import About from './Components/About.jsx';
 import ReactDOM from 'react-dom/client';
 import React from 'react';
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>  
-    <App />
-  </BrowserRouter>
+  <HashRouter>  
+    <Routes>
+      <Route path="/" element={<App />} />
+
+      <Route path="/pokemon/:id" element={<PokemonDetail />} />
+
+      <Route path="/about" element={<About />} />
+    </Routes>
+  </HashRouter>
 );
 

@@ -15,11 +15,10 @@ function PokemonDetail(){
 
         fetchPokemon();
     }, [id]); 
-    
     if(!pokemon) return <div>Loading...</div>;
     return(
         <div className="detail-page">
-            <button onClick={() => navigate(-1)} Back ></button>
+            <button className="back-button" onClick={() => navigate(-1)}>Back</button>
 
             <h1>{pokemon.name}</h1>
             <img src={pokemon.sprites.front_default} alt={pokemon.name} />
