@@ -1,9 +1,14 @@
-function PokemonCard({name, image}){
+import { useNavigate } from "react-router-dom";
+function PokemonCard({name, image,id,type}){
+    const navigate = useNavigate();
     return(
-        <div className="pokemon-card">
-            <h3>{name}</h3>
-            <img src={image} alt={name} className={name}/>
-            </div>
+        <div className={`pokemon-card ${type}`} onClick={() => navigate(`/pokemon/${id}`)}>
+           <div className="pokemon-card">
+            <p className="pokemon-id">#{id}</p>
+            <h2 className="pokemon-name">{name}</h2>
+            <img src={image} alt={name}/>
+           </div>
+        </div>
     );
 }
 
